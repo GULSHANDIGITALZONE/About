@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gulshan Kumar — Portfolio</title>
+  <title>About</title>
   <meta name="description" content="Personal portfolio website of Gulshan Kumar. Clean, fast, mobile‑friendly, and Netlify-ready." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,6 +92,60 @@
   </style>
 </head>
 <body>
+ <!-- 🌟 Loading Screen Start -->
+  <style>
+    #loading-overlay {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.9);
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.4s ease;
+    }
+    #loading-overlay.hide { opacity: 0; pointer-events: none; }
+    .loader-wrap { display: flex; flex-direction: column; align-items: center; }
+    .ring {
+      width: 90px; height: 90px; border-radius: 50%;
+      background: conic-gradient(from 0deg, #ff6b6b, #ffd93d, #6be4ff, #9b8cff, #ff6b6b);
+      -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 12px), black calc(100% - 11px));
+      mask: radial-gradient(farthest-side, transparent calc(100% - 12px), black calc(100% - 11px));
+      animation: spin 1.1s linear infinite;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading-text {
+      margin-top: 12px;
+      font-weight: bold;
+      font-family: "Segoe UI", sans-serif;
+      color: #333;
+      font-size: 17px;
+      letter-spacing: 0.5px;
+    }
+  </style>
+
+  <!-- 🌟 New Gradient Ring Loader -->
+  <div id="loading-overlay">
+    <div class="loader-wrap">
+      <div class="ring"></div>
+      <div class="loading-text">Loading…</div>
+    </div>
+  </div>
+
+  <script>
+    // Hide loader after full page load
+    window.addEventListener('load', () => {
+      const overlay = document.getElementById('loading-overlay');
+      overlay.classList.add('hide');
+      setTimeout(() => overlay.remove(), 600); // remove after fade
+    });
+  </script>
+
+  <!-- 🌟 Loading Screen End -->
+
+
   <header>
     <div class="container nav">
       <div class="logo">
@@ -139,6 +193,52 @@
           <a href="https://x.com/RsGulshan/highlights" target="_blank">Twitter</a>
         </div>
       </aside>
+    </div>
+  </section>
+
+   <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title">Choose and Buy Your Desired Project</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <div class="thumb"> <img src="./blog.png" alt=""></div>
+          <h3>GK Blog (Blogger)</h3>
+          <p class="muted">Hindi GK questions, study tips, and exam updates. Optimized for mobile and fast load.</p>
+          <div class="actions">
+            <a class="btn" href="https://gyankibate6.blogspot.com/" target="_blank">Live Demo</a>
+            <a class="btn" href="https://gyankibate6.blogspot.com/" target="_blank">Source</a>
+          </div>
+          
+        </article>
+        <article class="card">
+          <div class="thumb"><img src="./app pic.jpg" alt=""></div>
+          <h3>WebView Android App</h3>
+          <p class="muted">Simple Android app that wraps a website with back/forward/home buttons.</p>
+          <div class="actions">
+            <a class="btn" href="https://github.com/GULSHANDIGITALZONE/my-app/releases/download/v1.0.0/Gyan_Ki_Bate.apk" target="_blank">APK</a>
+            <a class="btn" href="https://github.com/GULSHANDIGITALZONE/-" target="_blank">Code</a>
+          </div>
+          
+        </article>
+        <article class="card">
+          <div class="thumb">Screenshot / Image</div>
+          <h3>Calculator (Kotlin)</h3>
+          <p class="muted">Clean two-line display, history view, and copy result.</p>
+          <div class="actions">
+            <a class="btn" href="#" target="_blank">Read More</a>
+            <a class="btn" href="#" target="_blank">GitHub</a>
+          </div>
+        </article>
+           <article class="card">
+          <div class="thumb">Screenshot / Image</div>
+          <h3>Calculator (Kotlin)</h3>
+          <p class="muted">Clean two-line display, history view, and copy result.</p>
+          <div class="actions">
+            <a class="btn" href="#" target="_blank">Read More</a>
+            <a class="btn" href="#" target="_blank">GitHub</a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
